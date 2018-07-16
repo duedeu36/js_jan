@@ -1,0 +1,26 @@
+1)
+Frontend
+
+- is the "visible" part of an website. 
+- is usualy "design"
+- when a user access to an website. The frontend is what the user can see.
+- it can work without a server
+- it sends requests to a server, forms i.e.
+
+
+Backend
+
+- request they were sended from a user will be executed here. A response from the
+server comes back
+- includes the functionality of a website.. clicking and responses
+- is the "unvisible" code behind the frontend: it means, for example, when you 
+fill a form on a webpage, a login or a signup, the process behind this form is the
+backend, is a code, which execute this form. For a normal user usually not to see.
+
+2)
+
+in a browser: Can get only access 
+on a server: Can be executed by every user who has the access to it
+
+3) 
+yes

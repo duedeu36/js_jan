@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Manager Solution</title>
+    <link rel="stylesheet" href="user_solution.css">
+</head>
+<body>
+   
+   <div class="container">
+       <div class="navigation">
+           <a class="navlinks" id="userlink">User</a>
+           <a class="navlinks" id="commentslink">Comments</a>
+           <a class="navlinks" id="adduserlink">Add user</a>
+           <a class="navlinks" id="addcommentlink">Add comments</a>
+       </div>
+   </div>
+   
+   <div id="main"> <!-- either users or comments --> 
+   
+   </div>
+   
+   <div id="adduser">
+       <input type="text" id="firstnameinput" placeholder="First name here">
+       <input type="text" id="usernameinput" placeholder="User name here">
+       <input type="text" id="emailinput" placeholder="Email here">
+       <button id="adduserbutton">Add user</button>
+   </div>
+   <div id="addcomment">
+       <input type="text" id="commentnameinput" placeholder="Name here">
+       <input type="text" id="commentemailinput" placeholder="Email here">
+       <input type="text" id="commentbodyinput" cols="30" rows="10">
+       <button id="addcommentbutton">Add comment</button>
+   </div>
+   
+   <script src="user_solution.js"></script>
+    
+</body>
+</html>

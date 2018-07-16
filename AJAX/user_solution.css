@@ -1,0 +1,49 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+    background: cornflowerblue;
+}
+
+#adduser, #addcomment {
+    display: none;
+}
+
+#main {
+    margin-top: 10px;
+    background: cornflowerblue;
+}
+
+.navigation {
+    padding: 5px;
+}
+
+.navlinks {
+    color:  white;
+    cursor: pointer;
+}
+
+#adduser, #addcomment {
+    display: none;
+    font-size: 16px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
