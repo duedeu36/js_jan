@@ -9,13 +9,15 @@ table, th, td {
     margin: 2px 8px;
 }
 
-.even-row {background: #2999e4;}
+.even-row {background: blue;}
 .odd-row {background: yellow;}
 .highlight {background: darkkhaki;}
 .highlight-2 {font-weight: bold; color: #de1515;}
 .red-color {color: #de1515;}
 .blue-color {color: cornflowerblue;}
 .green-color {color: seagreen;}
+.yellow-color { color:  yellow};
+.violet-color { color: violet};
 
 .border {
     padding: 10px; 

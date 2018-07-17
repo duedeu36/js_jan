@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    console.log('WEIRD Document is ready: Hello world');    
+    console.log('Document is ready: Hello world');    
 });
