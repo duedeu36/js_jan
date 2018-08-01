@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps Project</title>
+    
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+    
+        #map {
+            height: 100%;
+        }
+        
+        
+    </style>
+    
+</head>
+<body>
+  
+   <div id="map">
+       <script>
+           var map;
+           function initMap()
+           {
+               let startPosition = {lat: -34.397, lng: 150.644};
+               // the map
+               map = new google.maps.Map(document.getElementById('map'),
+               {
+                   center: startPosition,
+                   zoom: 8
+               });
+
+               // markers
+               var marker1 = new google.maps.Marker({
+                   position: startPosition,
+                   map: map,
+                   title: 'Sydney'
+               });
+
+               // task: create a second marker that is a bit more eastern than marker1
+               let easternPosition = {lat: -34.397, lng: 170.644};
+               var marker2 = new google.maps.Marker({
+                   position: easternPosition,
+                   map: map,
+                   title: 'Somewhat eastern'
+               });
+
+               // deleting a marker
+               marker2.setMap(null);
+           }
+       </script>
+
+   </div>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPL5FbwKVlLkZL0quNPnsi3dOpK-d59Ko&callback=initMap" async defer>
+   </script>
+   <!--script type="text/javascript">
+       document.write('<scr'+'ipt src="googlemaps.js?' + Math.random() + '" type="text/javascript"></scr'+'ipt>');
+   </script-->
+
+</body>
+</html>

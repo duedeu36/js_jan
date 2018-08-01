@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps Project</title>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #map {
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="map">
+        <script>
+            var map;
+
+            function initMap() {
+                let startPosition = {
+                    lat: -34.397,
+                    lng: 150.644
+                };
+                // the map
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: startPosition,
+                    zoom: 8
+                });
+
+                var geocoder = new google.maps.Geocoder();
+                var location = 'New York, USA';
+
+                geocoder.geocode({
+                        'address': location
+                    },
+                    function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            let lat = results[0].geometry.location.lat();
+                            let lng = results[0].geometry.location.lng();
+
+                            var newMarker = new google.maps.Marker({
+                                position: {
+                                    lat: lat,
+                                    lng: lng
+                                },
+                                map: map,
+                                title: location
+                            });
+
+                            map.setCenter({
+                                lat: lat,
+                                lng: lng
+                            });
+                        }
+                    }
+                );
+
+                setTimeout(function() {
+                    map.setCenter({
+                        lat: 22.000,
+                        lng: 35.000
+                    });
+                    map.setZoom(5);
+                }, 5000);
+
+            }
+        </script>
+
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPL5FbwKVlLkZL0quNPnsi3dOpK-d59Ko&callback=initMap" async defer>
+    </script>
+    <!--script type="text/javascript">
+       document.write('<scr'+'ipt src="googlemaps.js?' + Math.random() + '" type="text/javascript"></scr'+'ipt>');
+   </script-->
+
+
+</body>
+</html>
