@@ -1,111 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>DOM</title>
-   <script src="jquery.js"></script>
-   <script type="text/javascript">
-       document.write('<link rel="stylesheet" type="text/css" href="style.css?'+Math.random()+'"/>');
-   </script>  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Google Maps Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      html,
+      body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
 
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: grey;
-        }
+      #header {
+          height: 30px;
+          background-color: darkgrey;
+          padding-top: 10px;
+          padding-left: 20px;
 
-        #map {
-            height: 100%;
-        }
-        
-        .btn-style, input, select {
-            padding: 5px;
-            margin: 10px 0 10px 5px;
-        }
-        
-    </style>
+      }
+      #map {
+          height: 90%;
+      }
 
+      #footer {
+          height: 30px;
+          background-color: darkgrey;
+      }
+
+      .btn:hover {
+          cursor: pointer;
+      }
+
+  </style>
+  <script src="jquery.js"></script>
 </head>
 
 <body>
-    
-    <div class="navbar">
-        <input type="text" placeholder="Berlin, Germany" class="location" id="inputLoc">
-        <button class="add-btn btn-style">Add location!</button>
-        <button class="zoom-out-btn btn-style">Zoom out</button>
-        <button class="remove-btn btn-style">Remove:</button>
-        <select name="" id="locations">
-            <!--<option>Berlin</option>
-            <option>Mount Everest</option>
-            <option>Dubai</option>
-            <option>5th avenau, New York City</option>
-            <option>Mariana Trench</option>-->
+    <div id="header">
+        <input type="text" id="inputLocation" placeholder="Berlin Germany">
+        <button id="addLocation" class="btn">Add Location</button>
+        <button id="zoomout" class="btn">Zoom out</button>
+        <button id="zoomin" class="btn">Zoom in</button>
+        <button id="remove" class="btn">Remove:</button>
+        <select class="selectBox">
+            <option class="opt">Please select:</option>
         </select>
         
         
+        
+        
+        
     </div>
-
-    <div id="map">
-        <script>
-            var map;
-
-            function initMap() {
-                let startPosition = {
-                    lat: -34.397,
-                    lng: 150.644
-                };
-                // the map
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: startPosition,
-                    zoom: 5
-                });
-                
-                function initMap() {
-                   map = new google.maps.Map(document.getElementById('map'), 
-                   { center: { lat: -34.397, lng: 150.644 }, zoom: 8 });
-                }
-                
-                var locValue;
-                
-                $('.add-btn').click(function() {
-                    locValue = $('.location').val();
-                    $('#locations').append('<option value=' + locValue + '>' + locValue + '</option>');
-                    console.log(locValue);
-                    //jump immediately to the place on the map:
-                    
-                });
-                
-                $('.remove-btn').click(function() {
-                    console.log('remove btn clicked');
-                    $('#locations option[value=' + locValue + ']').remove();
-                });
-                
-                
-                
-
-                /*setTimeout(function() {
-                    map.setCenter({
-                        lat: 22.000,
-                        lng: 35.000
-                    });
-                    map.setZoom(5);
-                }, 5000);*/
-
-            }
+    
+    
+    <div id="map"></div>
+    
+    <script>
+        var map;
+        
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 52.520007,
+                    lng: 13.404954
+                },
+                zoom: 8
+            });
+        }
+        
         </script>
-
-    </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPL5FbwKVlLkZL0quNPnsi3dOpK-d59Ko&callback=initMap" async defer>
-    </script>
-    <script type="text/javascript">
-       document.write('<scr'+'ipt src="googlemaps.js?' + Math.random() + '" type="text/javascript"></scr'+'ipt>');
-   </script>
-
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPL5FbwKVlLkZL0quNPnsi3dOpK-d59Ko&callback=initMap" async defer></script>
+  
+  <div id="footer"></div>
+  <script src="main.js"></script>
 </body>
+
 </html>
