@@ -86,6 +86,8 @@ $(document).ready(function () {
     });
 
 })
+
+var map;
     
     $(window).bind('load', function() {
         $.ajax({
@@ -94,6 +96,7 @@ $(document).ready(function () {
             dataType: 'json', 
             success: function(response) {
                 console.log(response);
+            map = new SVGFEMorphologyElement.maps.Map(document.getElementById)
             }
         })
     })
