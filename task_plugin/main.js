@@ -1,37 +1,33 @@
 $(document).ready(function() {
 
-    $.fn.fancyButton = function() {
-        this.css( {
-            'display': 'inline-block',
-            'height': '34px',
-            'width': '150px',
-            'vertical-align': 'middle',
-            'text-align': 'center',
-            'font-family': 'sans-serif',
-            'background-color': 'chocolate',
-            //'border': 'solid' '1px' 'chocolate',
-            'opacity': '0.7',
-            'color': 'pointer',
-            'margin': '2px 0px',
-            'line-height': '34px'
-        });
-
-        this.hover(function(e) {
-            $(this).css({
-                'opacity': e.type === 'mouseenter' ? '1.0': '0.2',
-                'color': e.type === 'mouseenter' ? 'white': 'yellow' 
+    var $scrollStatus = $('.scroll-status');
+        
+            $('.nav').navScroll({
+              mobileDropdown: true,
+              mobileBreakpoint: 768,
+              scrollSpy: true,
+              onScrollStart: function() {
+                $scrollStatus.show();
+                $scrollStatus.text('Started scrolling');
+              },
+              onScrollEnd: function() {
+                $scrollStatus.text('Scrolling ended');
+                setTimeout(function() {
+                  $scrollStatus.fadeOut(200);
+                }, 1000);
+              }
             });
-        });
-        return this;
-    }
+        
+            $('.click-me').navScroll({
+              navHeight: 0
+            });
+        
+            $('.nav').on('click', '.nav-mobile', function (e) {
+              e.preventDefault();
+              $('.nav ul').slideToggle('fast');
+            });
 
-    $('.button1').fancyButton();
-    $('.button2').fancyButton();
-    $('.button3').fancyButton();
 
-    $('.hallo').hover(function(e) {
-        if(e.type === 'mouseenter') {
-            console.log('mouse entered hello');
-        }
-    });
+            jQuery("#gallery").unitegallery();
+    
 });
