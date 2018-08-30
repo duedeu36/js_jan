@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.all-items {
+    width: 79%;
+    margin: 0 auto;
+    /* border: 1px solid rgb(61, 61, 61); */
+}
+
+.items {
+    width: 200px;
+    height: 300px;
+    border: 1px solid rgb(168, 168, 168);
+    margin: 0 auto;
+    border-radius: 3px;
+    padding: 20px;
+}
