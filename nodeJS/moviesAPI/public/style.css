@@ -5,7 +5,9 @@
 
 .all-items {
     width: 79%;
-    margin: 0 auto;
+    margin:0 auto;
+    border: 1px solid red;
+    padding: 40px;
     /* border: 1px solid rgb(61, 61, 61); */
 }
 
@@ -13,7 +15,7 @@
     width: 200px;
     height: 300px;
     border: 1px solid rgb(168, 168, 168);
-    margin: 0 auto;
     border-radius: 3px;
+    margin: 15px;
     padding: 20px;
 }
