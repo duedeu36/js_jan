@@ -1,0 +1,30 @@
+[
+    {
+        "Title": "Star Wars: Episode II - Attack of the Clones",
+        "Year": "2002",
+        "imdbID": "tt0121765",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg"
+    },
+    {
+        "Title": "Lone Star State of Mind",
+        "Year": "2002",
+        "imdbID": "tt0269483",
+        "Type": "movie",
+        "Poster": "https://ia.media-imdb.com/images/M/MV5BMTQxODQxODgwMl5BMl5BanBnXkFtZTcwNzA0NzEyMQ@@._V1_SX300.jpg"
+    },
+    {
+        "Title": "The Star of Christmas",
+        "Year": "2002",
+        "imdbID": "tt0399837",
+        "Type": "movie",
+        "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg5NTY4NTM4MV5BMl5BanBnXkFtZTcwMzUzMjMyMQ@@._V1_SX300.jpg"
+    },
+    {
+        "Title": "Star Wars: Attack of the Clones - A Jigsaw Puzzle",
+        "Year": "2002",
+        "imdbID": "tt2323212",
+        "Type": "movie",
+        "Poster": "N/A"
+    }
+]

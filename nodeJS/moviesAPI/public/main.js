@@ -1,87 +1,130 @@
-let products = [];
+$(document).ready(function () {
 
-function showProducts() {
-    $('.content').empty();
-    for(let i=0; i<products.length; i++) {
-        let product = `
-            <div class="product" data-id=${products[i].id}>
-            <div class="product-title">${products[i].title}</div>
-            <div class="product-price">${products[i].price}</div>
-            </div>    
-        `;
-        $('.content').append(product);
-        if(!products[i].imageurl.startsWith('http')) {
-            $('.product[data-id='+products[i].id+']').css('background', "url('images/"+products[i].imageurl+"') no-repeat center")
-        }
-        else {
-            $('.product[data-id='+products[i].id+']').css('background', "url('"+products[i].imageurl+"') no-repeat center")
-        }
-    }
-}
 
-function loadProducts(q) {
-    let url = q ? 'http://localhost:3000/products?q='+q : 'http://localhost:3000/products';
+    $('#modularSection').hide();
+    $('#addMovie').hide();
 
-    $.ajax({
-        url: url,
-        method: 'GET',
-        success: function(data) {
-            products = data;            
-            showProducts();
-        },
-        error: function(err) {
-            console.log(err);
-        }
-    });
-}
+    $('#showMovies').click(function () {
 
-function addProduct() {
-    
-    let newProduct = {
-        title: $('#title').val(),
-        price: $('#price').val(),
-        type: $('#type option:selected').val(),
-        description: $('#description').val(),
-        imageurl: $('#imageurl').val()        
-    };
-
-    $.ajax({
-        url: 'http://localhost:3000/products',
-        method: 'POST',
-        data: JSON.stringify(newProduct),
-        contentType: 'application/json; charset=utf-8',
-        success: function(data) {
-            products.push(data);
-            showProducts();
-            $('#navlink-startpage').trigger('click');
-        },
-        error: function(err) {
-            console.log(err);
-        }
-    });    
-}
-
-$('document').ready(function() {
-
-    console.log('document ready');
-    $('#navlink-startpage').on('click', function(e) {
-        $('.content').css('display', 'flex')
-        $('.addproduct').hide();
+        $('#allMovies').show();
+        $('#addMovie').hide();
+        // $('#allMovies').toggle();
     });
 
-    $('#navlink-product').on('click', function(e) {
-        $('.content').hide();
-        $('.addproduct').show();
-    });    
-
-    $('#btn-addproduct').on('click', function(e) {
-        addProduct();
-    });   
-
-    $('#btn-search').on('click', function() {
-        let q = $('.searchbox').val();
-        loadProducts(q);
+    $('#addingMovie').click(function () {
+        $('#addMovie').show();
+        $('#allMovies').hide();
+        // $('#addMovie').toggle();
     });
 
-    loadProducts();
 });
+
+
+
+// GET request to show all movies
+
+$.ajax({
+    type: 'GET',
+    contentType: 'application/json',
+    url: '/products',
+    dataType: 'json',
+    success: function (response) {
+        console.log(response);
+        $.each(response, function (index, element) {
+            console.log(element)
+/* 
+        <section id="mainContent">
+            <div class="all-items" id="allMovies">
+                <div class="d-flex flex-wrap" id="Items">
+                    
+                </div>
+            </div>
+            <div class="modular" id="Modular">
+            <div class="content" id="Content">
+            <h2>Title</h2>
+                    <p>Description of the movie</p>
+                </div>
+            </div>
+        </section> */
+
+        var allMoviesDiv = $('<div></div>');
+        allMoviesDiv.addClass('all-items');
+        allMoviesDiv.attr('id','allMovies');
+        $('#mainContent').append(allMoviesDiv);
+        var allItmesDiv = $('<div></div>');
+        allItmesDiv.addClass('d-flex flex-wrap');
+        allItmesDiv.attr('id', 'Items');
+        allMoviesDiv.append(allItmesDiv);
+        var itemsDiv = $('<div></div>');
+        itemsDiv.addClass('items');
+        allItmesDiv.append(itemsDiv);
+        var itemImg = $('<img>');
+        itemImg.attr('src', element.imgURL);
+        itemsDiv.append(itemImg);
+
+        var modularDiv = $('<div></div>');
+        modularDiv.addClass('modular');
+        modularDiv.attr('id', 'Modular');
+        $('#mainContent').append(modularDiv);
+        var modularContentDiv = $('<div></div>');
+        modularContentDiv.addClass('content');
+        modularContentDiv.attr('id', 'Content');
+        modularDiv.append(modularContentDiv);
+        var itemTitle = $('<h2></h2>');
+        itemTitle.html(element.title);
+        modularContentDiv.append(itemTitle);
+        var itemParagraph = $('<p></p>');
+        itemParagraph.html(element.description);
+        modularContentDiv.append(itemParagraph);
+
+
+
+
+
+
+
+                
+        
+        $(document).click(function(event) {
+            if(!$(event.target).closest('#modularSection').length) {
+                if($('#modularSection').is(":visible")) {
+                            $('#modularSection').remove();
+                        }
+                    }
+                });
+                
+            });
+            
+        },
+        error: function (xhr, status, error) {
+            console.log(`
+            error: ${error},
+            status: ${status},
+            xhr: ${JSON.stringify(xhr)}
+            `);
+        }
+        
+    });
+    /*                 var modularDiv = $('<div></div>');
+                    modularDiv.addClass('modular');
+                    var modularContent = $('<div></div>');
+                    var addImage = $('<img>');
+                    addImage.attr('src', element.Poster);
+                    modularContent.addClass('content');
+                    var contentTitle = $('<h2></h2>');
+                    contentTitle.html(element.Title);
+                    var contentParagraph = $('<p></p>');
+                    contentParagraph.html(element.Type);
+    
+                    $(itemDiv).on('click',function() {
+                        $('#Modular').show();
+                    });
+                    var itemDiv = $('<div></div>');
+                    itemDiv.addClass('items');
+                    
+                    itemDiv.append(addImage);
+                    $('#Items').append(itemDiv);
+                    $('#Modular').append(modularDiv);
+                    modularDiv.append(modularContent);
+                    modularContent.append(contentTitle);
+                    modularContent.append(contentParagraph); */

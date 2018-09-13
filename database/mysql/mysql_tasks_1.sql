@@ -41,6 +41,10 @@ select * from customers where not exists(select * from orders where orders.custo
 -- 15 Get all products and their product categories
 select products.*, product_categories.* from products join product_categories on products.category_id = product_categories.id;
 
+-- insert users into 
+insert into users (username) values ('max'), ('moritz'), ('peter'), ('lars');
+select * from users;
+
 -- Ctrl + Enter
 
 
