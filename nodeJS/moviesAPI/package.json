@@ -2,7 +2,16 @@
   "name": "moviesapi",
   "version": "1.0.0",
   "description": "",
+<<<<<<< HEAD
   "main": "server.js",
+=======
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
+  },
+  "devDependencies": {},
+>>>>>>> bac3e241c9c7ca2aaba6922885663ad8ca6bea89
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

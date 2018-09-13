@@ -4,10 +4,18 @@
 }
 
 .all-items {
+<<<<<<< HEAD
     width: 82%;
     margin: 0 auto;
     padding: 40px;
 
+=======
+    width: 79%;
+    margin:0 auto;
+    border: 1px solid red;
+    padding: 40px;
+    /* border: 1px solid rgb(61, 61, 61); */
+>>>>>>> bac3e241c9c7ca2aaba6922885663ad8ca6bea89
 }
 
 .items {
@@ -16,6 +24,7 @@
     border: 1px solid rgb(168, 168, 168);
     border-radius: 3px;
     margin: 15px;
+<<<<<<< HEAD
     /* overflow: visible; */
 }
 
@@ -53,3 +62,7 @@ form {
     padding: 20px;
     color: #fff;
 }
+=======
+    padding: 20px;
+}
+>>>>>>> bac3e241c9c7ca2aaba6922885663ad8ca6bea89

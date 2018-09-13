@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function () {
 
 
@@ -128,3 +129,24 @@ $.ajax({
                     modularDiv.append(modularContent);
                     modularContent.append(contentTitle);
                     modularContent.append(contentParagraph); */
+=======
+$(document).ready(function() {
+
+    $('#allMovies').hide();
+    $('#addMovie').hide();
+
+    $('#showMovies').click(function () {
+        // $('#allMovies').show();
+        $('#allMovies').toggle();
+    });
+
+    $('#addingMovie').click(function () {
+        // $('#addMovie').show();
+        $('#addMovie').toggle();
+
+    });
+
+
+
+});
+>>>>>>> bac3e241c9c7ca2aaba6922885663ad8ca6bea89
