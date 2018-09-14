@@ -4,32 +4,20 @@
 }
 
 .all-items {
-<<<<<<< HEAD
-    width: 82%;
     margin: 0 auto;
     padding: 40px;
-
-=======
-    width: 79%;
-    margin:0 auto;
-    border: 1px solid red;
-    padding: 40px;
-    /* border: 1px solid rgb(61, 61, 61); */
->>>>>>> bac3e241c9c7ca2aaba6922885663ad8ca6bea89
 }
 
 .items {
-    width: 200px;
-    height: 300px;
     border: 1px solid rgb(168, 168, 168);
     border-radius: 3px;
     margin: 15px;
-<<<<<<< HEAD
-    /* overflow: visible; */
+    /* background-size: contain; */
+    /* overflow: hidden; */
 }
 
 img {
-    background-size: cover;
+    background-size: contain;
     width: 200px;
     height: 300px;
 }
@@ -42,12 +30,12 @@ form {
 .content {
     width: 50%;
     height: 50%;
-    position: absolute;
+    position: fixed;
     left: 25%;
     top: 25%;
     background: rgba(0, 0, 0, 0.719);
     border-radius: 10px;
-    visibility: show;
+    /* visibility: show; */
 }
 
 .content h2 {
@@ -55,6 +43,7 @@ form {
     padding: 20px;
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .content p {
@@ -62,7 +51,3 @@ form {
     padding: 20px;
     color: #fff;
 }
-=======
-    padding: 20px;
-}
->>>>>>> bac3e241c9c7ca2aaba6922885663ad8ca6bea89
